@@ -1,0 +1,48 @@
+.container{
+    display: flex;
+    position: relative;
+}
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 26px;
+    text-decoration: underline;
+    font-family: monospace;
+    font-size: 30px;
+    font-weight: inherit;
+
+}
+h2{
+    text-align: center;
+}
+.rooms{
+   width:40%;
+   font-size:20px;
+   margin:25px;
+
+}
+.rooms div {
+    width:50%;
+    background-color:rgb(211, 212, 212);
+    margin:20px;
+}
+.rooms div:hover {
+    background-color:rgb(255, 240, 118);
+}
+
+
+.rooms img:hover{
+    opacity:.8;
+}
+
+p{
+    text-align:center !important;
+    padding:10px;
+}
+.map{
+    position:fixed;
+    width:50%;
+    height:500px;
+    top: 297px;
+    right:150px;
+}

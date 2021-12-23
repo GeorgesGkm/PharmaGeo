@@ -1,0 +1,31 @@
+.container{
+    display: flex;
+    position: relative;
+}
+
+
+h5{
+    text-decoration: underline;
+}
+
+.rooms{
+       font-size: 14px;
+       margin: 50px;
+
+}
+.rooms div {
+ text-align: center
+}
+.rooms div:hover {
+    background-color:rgb(255, 240, 118);
+}
+.rooms img:hover{
+    opacity:.8;
+}
+.map{
+    position:fixed;
+    width:50%;
+    height:500px;
+    top: 297px;
+    right:150px;
+}
