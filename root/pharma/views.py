@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.contrib import messages
+from django.contrib.auth import authenticate
+from django.shortcuts import render, redirect
 from django.views.generic.base import TemplateView
 
 
@@ -20,7 +22,7 @@ class Home(TemplateView):
         return context
 
 
-def add_hotels(request, *args, **kwargs):
+def add(request, *args, **kwargs):
     if request.method == 'POST':
         form = PharmaForm(request.POST)
         if form.is_valid():
@@ -38,3 +40,23 @@ def hotelsApi(request, *args, **kwargs):
     hotels = Pharma.objects.all()
     data = PharmaSerialzer(hotels, many=True).data
     return Response(data)
+
+def login(request):
+
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(request, username=username, password=password)
+        print(user)
+        if username == 'admin' and password =='1234':
+            print(username)
+            return redirect('home')
+        elif username == 'user' and password =='1234':
+            print(username)
+            return redirect('add')
+
+        else:
+            messages.info(request, 'username or password is incorrect')
+    context = {}
+    return render(request, 'rooms/index.html')

@@ -22,8 +22,9 @@ from pharma import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', views.Home.as_view(), name='home'),
-    path('add_hotels/', views.add_hotels, name='add_hotels'),
+    path('add/', views.add, name='add'),
     path('hotelsapi/', views.hotelsApi, name='hotelsApi'),
+    path('', views.login, name='login'),
 
 
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

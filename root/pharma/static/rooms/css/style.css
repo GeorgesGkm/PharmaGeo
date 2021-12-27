@@ -7,7 +7,6 @@ h2{
 .myapp,  .roomAddress{
     width: 100%;
     text-align: center;
-    background-color:rgb(179, 178, 175);
     padding-bottom: 20px;
 }
 .roomAddress{
